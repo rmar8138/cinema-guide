@@ -2,7 +2,9 @@
   <h3>{{ cinema.name }}</h3>
   <ul>
     <li *ngFor="let movieShowing of movieShowings">
-      <p>{{ movieShowing.movie.title }}</p>
+      <a [routerLink]="['/movie', movieShowing.movie.id]">{{
+        movieShowing.movie.title
+      }}</a>
       <span>{{ movieShowing.movie.genre }}</span>
       <ul>
         <li *ngFor="let time of movieShowing.times">

@@ -1,1 +1,7 @@
 <h2>Cinemas</h2>
+
+<ul>
+  <li *ngFor="let cinema of cinemas">
+    <a [routerLink]="['/cinema', cinema.id]">{{ cinema.name }}</a>
+  </li>
+</ul>
