@@ -3,6 +3,17 @@
 .movies {
   &__header {
     margin: $space-sm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    a {
+      transition: all 0.2 ease-out;
+
+      &:hover {
+        color: $color-light-grey;
+      }
+    }
   }
 
   ul {

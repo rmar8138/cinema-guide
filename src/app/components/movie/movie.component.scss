@@ -1,0 +1,79 @@
+@import "./../../../variables.scss";
+
+.movie-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie {
+  height: 40vw;
+  width: 90%;
+  // padding: $space-md;
+  background-color: $color-black;
+  display: flex;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 30%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    position: relative;
+    padding: $space-lg;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: scroll;
+
+    a {
+      &:hover {
+        color: $color-light-grey;
+        transition: all 0.2 ease-out;
+      }
+    }
+
+    .back-link {
+      position: absolute;
+      top: $space-lg;
+      right: $space-lg;
+    }
+  }
+
+  &__title {
+    margin-bottom: $space-lg;
+
+    h2 {
+      font-weight: 400;
+      font-size: $text-xxl;
+    }
+  }
+
+  &__showings {
+    margin-bottom: $space-lg;
+
+    li a {
+      font-size: $text-lg;
+    }
+  }
+
+  &__form {
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 50%;
+      margin-bottom: $space-md;
+    }
+  }
+}

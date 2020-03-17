@@ -39,3 +39,35 @@ a {
 ul {
   list-style: none;
 }
+
+input {
+  color: $color-white;
+  height: $space-xl;
+  padding: $space-sm;
+  font-size: $text-md;
+  border: none;
+  background-color: $color-light-grey;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  background-color: $color-light-grey;
+  padding: $space-sm $space-lg;
+  font-size: $text-md;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+
+  &:hover,
+  &:active {
+    background-color: $color-dark-grey;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

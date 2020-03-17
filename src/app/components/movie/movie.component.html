@@ -1,29 +1,47 @@
-<div>
-  <p>{{ movie.title }}</p>
-  <span>{{ movie.genre }}</span>
-  <h3>Showings</h3>
-  <ul *ngFor="let cinemaShowing of cinemaShowings">
-    <li>
-      <a [routerLink]="['/cinema', cinemaShowing.cinema.id]">{{
-        cinemaShowing.cinema.name
-      }}</a>
-      <ul>
-        <li *ngFor="let time of cinemaShowing.times">
-          {{ time }}
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <h3>Update Movie Details</h3>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label>Title</label>
-      <input type="text" name="title" [(ngModel)]="movieTitle" />
+<div class="movie-container">
+  <div class="movie">
+    <div class="movie__image">
+      <img
+        src="./../../../assets/images/{{ movie.id }}.jpg"
+        alt="{{ movie.title }}"
+      />
     </div>
-    <div>
-      <label>Genre</label>
-      <input type="text" name="genre" [(ngModel)]="movieGenre" />
+
+    <div class="movie__details">
+      <a class="back-link" [routerLink]="['/movies']">&larr; Back</a>
+      <div class="movie__title">
+        <h2>{{ movie.title }}</h2>
+        <p class="genre">{{ movie.genre }}</p>
+      </div>
+      <div class="movie__showings">
+        <h3>Showings</h3>
+        <ul *ngFor="let cinemaShowing of cinemaShowings">
+          <li>
+            <a [routerLink]="['/cinema', cinemaShowing.cinema.id]">{{
+              cinemaShowing.cinema.name
+            }}</a>
+            <ul>
+              <li *ngFor="let time of cinemaShowing.times">
+                {{ time }}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="movie__form">
+        <h3>Update Movie Details</h3>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-field">
+            <label>Title</label>
+            <input type="text" name="title" [(ngModel)]="movieTitle" />
+          </div>
+          <div class="form-field">
+            <label>Genre</label>
+            <input type="text" name="genre" [(ngModel)]="movieGenre" />
+          </div>
+          <button>Update</button>
+        </form>
+      </div>
     </div>
-    <button>Update</button>
-  </form>
+  </div>
 </div>
