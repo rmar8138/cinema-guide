@@ -1,7 +1,18 @@
-<h2>Movies</h2>
-
-<ul>
-  <li *ngFor="let movie of movies">
-    <a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a>
-  </li>
-</ul>
+<div class="movies">
+  <div class="movies__header">
+    <h2>Movies</h2>
+    <a [routerLink]="['/']">Back</a>
+  </div>
+  <ul>
+    <li
+      *ngFor="let movie of movies"
+      [style.backgroundImage]="
+        'url(' + './../../assets/images/' + movie.id + '.jpg' + ')'
+      "
+    >
+      <a [routerLink]="['/movie', movie.id]">
+        <span>{{ movie.title }}</span>
+      </a>
+    </li>
+  </ul>
+</div>
