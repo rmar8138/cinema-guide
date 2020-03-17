@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+// IMPORTS
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+
+// COLOR VARIABLES //
+
+$color-black: #000;
+$color-dark-grey: #171717;
+$color-light-grey: #696969;
+$color-white: #fff;
+
+// FONT SIZE VARIABLES //
+$base-size: 1.6rem;
+$scale-ratio: 1.2;
+$text-xs: calc($base-size / ($scale-ratio * $scale-ratio));
+$text-sm: calc($base-size / $scale-ratio);
+$text-md: calc($base-size * $scale-ratio);
+$text-lg: calc($base-size * $scale-ratio * $scale-ratio);
+$text-xl: calc($base-size * $scale-ratio * $scale-ratio * $scale-ratio);
+
+// SPACING VARIABLES //
+
+$space-unit: 1.6rem;
+$space-xs: calc(0.5 * $space-unit);
+$space-sm: calc(0.75 * $space-unit);
+$space-md: calc(1.25 * $space-unit);
+$space-lg: calc(2 * $space-unit);
+$space-xl: calc(3.25 * $space-unit);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: $color-dark-grey;
+}
+
+body {
+  font-family: "Roboto", "sans-serif";
+  font-size: $text-md;
+  font-weight: 300;
+  line-height: 1.7;
+  color: $color-white;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+h2,
+h3 {
+  color: $color-light-grey;
+}
+
+a {
+  text-decoration: none;
+  color: $color-white;
+}
+
+ul {
+  list-style: none;
+}
