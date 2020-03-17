@@ -64,4 +64,14 @@ export class MovieService {
 
     return cinemaShowings;
   }
+
+  updateMovie(id, { title, genre }) {
+    this.movies.forEach(movie => {
+      if (movie.id === id) {
+        movie.title = title;
+        movie.genre = genre;
+        return;
+      }
+    });
+  }
 }

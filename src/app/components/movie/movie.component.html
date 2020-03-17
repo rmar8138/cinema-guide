@@ -14,4 +14,16 @@
       </ul>
     </li>
   </ul>
+  <h3>Update Movie Details</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>Title</label>
+      <input type="text" name="title" [(ngModel)]="movieTitle" />
+    </div>
+    <div>
+      <label>Genre</label>
+      <input type="text" name="genre" [(ngModel)]="movieGenre" />
+    </div>
+    <button>Update</button>
+  </form>
 </div>

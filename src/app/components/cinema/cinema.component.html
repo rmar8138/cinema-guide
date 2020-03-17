@@ -1,5 +1,6 @@
 <div>
   <h3>{{ cinema.name }}</h3>
+  <span>Opening Hours: {{ cinema.openingHours }}</span>
   <ul>
     <li *ngFor="let movieShowing of movieShowings">
       <a [routerLink]="['/movie', movieShowing.movie.id]">{{

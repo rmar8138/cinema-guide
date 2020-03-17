@@ -13,6 +13,8 @@ import { CinemaShowing } from './../../models/CinemaShowing';
 export class MovieComponent implements OnInit {
   movie: Movie;
   cinemaShowings: CinemaShowing[];
+  movieTitle: string;
+  movieGenre: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,5 +27,15 @@ export class MovieComponent implements OnInit {
       this.movie = this.movieService.getMovie(id);
       this.cinemaShowings = this.movieService.getCinemaShowings(id);
     });
+  }
+
+  onSubmit() {
+    this.movieService.updateMovie(this.movie.id, {
+      title: this.movieTitle || this.movie.title,
+      genre: this.movieGenre || this.movie.genre
+    });
+
+    this.movieTitle = '';
+    this.movieGenre = '';
   }
 }
