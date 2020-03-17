@@ -1,0 +1,12 @@
+@import "./../variables.scss";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  padding: $space-sm $space-lg;
+}

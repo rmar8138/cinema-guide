@@ -1,0 +1,19 @@
+@import "./../../../variables.scss";
+
+.navigation {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    margin: $space-xl;
+  }
+
+  li a {
+    display: block;
+    background-color: $color-light-grey;
+    height: 40rem;
+    width: 30rem;
+  }
+}
