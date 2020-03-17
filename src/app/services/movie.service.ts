@@ -19,8 +19,16 @@ export class MovieService {
     return this.movies;
   }
 
+  getMovie(id: number) {
+    return this.movies.find(movie => movie.id === id);
+  }
+
   getCinemas() {
     return this.cinemas;
+  }
+
+  getCinema(id: number) {
+    return this.cinemas.find(cinema => cinema.id === id);
   }
 
   getShowings() {

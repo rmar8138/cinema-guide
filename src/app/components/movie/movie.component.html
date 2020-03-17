@@ -1,1 +1,11 @@
-<li>{{ movie.title }} | {{ movie.genre }}</li>
+<div>
+  <p>{{ movie.title }}</p>
+  <span>{{ movie.genre }}</span>
+  <h3>Showings</h3>
+  <ul *ngFor="let showing of showings">
+    <li>
+      <a [routerLink]="['/cinema', showing.cinemaId]">{{ showing.cinemaId }}</a>
+      {{ showing.time }}
+    </li>
+  </ul>
+</div>
