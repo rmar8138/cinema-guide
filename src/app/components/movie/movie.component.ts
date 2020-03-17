@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
+import { MovieService } from './../../services/movie.service';
 import { Movie } from './../../models/Movie';
-import { Showing } from './../../models/Showing';
-import { Cinema } from './../../models/Cinema';
+import { CinemaShowing } from './../../models/CinemaShowing';
 
 @Component({
   selector: 'app-movie',
@@ -10,17 +11,19 @@ import { Cinema } from './../../models/Cinema';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
-  @Input() movie: Movie;
-  @Input() showings: Showing[];
-  @Input() cinemas: Cinema[];
+  movie: Movie;
+  cinemaShowings: CinemaShowing[];
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private movieService: MovieService
+  ) { }
 
   ngOnInit(): void {
-    this.showings = this.filterShowings(this.showings);
-  }
-
-  filterShowings(showings): Showing[] {
-    return showings.filter(showing => showing.movieId === this.movie.id);
+    this.route.paramMap.subscribe(params => {
+      const id = parseInt(params.get('id'));
+      this.movie = this.movieService.getMovie(id);
+      this.cinemaShowings = this.movieService.getCinemaShowings(id);
+    });
   }
 }

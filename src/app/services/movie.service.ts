@@ -36,6 +36,7 @@ export class MovieService {
   }
 
   getMovieShowings(cinemaId: number) {
+    // see what movies are showing at a cinema
     const movieShowings = [];
     const cinemaShowings = this.getShowings().filter(showing => showing.cinemaId === cinemaId);
     const movies = this.getMovies();
@@ -47,5 +48,20 @@ export class MovieService {
     });
 
     return movieShowings;
+  }
+
+  getCinemaShowings(movieId: number) {
+    // see which cinemas are showing a certain movie
+    const cinemaShowings = [];
+    const movieShowings = this.getShowings().filter(showing => showing.movieId === movieId);
+    const cinemas = this.getCinemas();
+    movieShowings.forEach(movieShowing => {
+      cinemaShowings.push({
+        cinema: cinemas.find(cinema => cinema.id === movieShowing.cinemaId),
+        times: movieShowing.times
+      });
+    });
+
+    return cinemaShowings;
   }
 }

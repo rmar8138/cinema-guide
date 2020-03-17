@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { MovieService } from './../../services/movie.service';
 import { Cinema } from './../../models/Cinema';
+import { MovieShowing } from './../../models/MovieShowing';
 
 @Component({
   selector: 'app-cinema',
@@ -11,6 +12,7 @@ import { Cinema } from './../../models/Cinema';
 })
 export class CinemaComponent implements OnInit {
   cinema: Cinema;
+  movieShowings: MovieShowing[];
 
   constructor(
     private route: ActivatedRoute,
@@ -22,8 +24,7 @@ export class CinemaComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = parseInt(params.get('id'));
       this.cinema = this.movieService.getCinema(id);
-      console.log(this.movieService.getMovieShowings(id));
-
+      this.movieShowings = this.movieService.getMovieShowings(id);
     });
   }
 }

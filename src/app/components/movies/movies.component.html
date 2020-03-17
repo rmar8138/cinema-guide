@@ -2,10 +2,6 @@
 
 <ul>
   <li *ngFor="let movie of movies">
-    <app-movie
-      [movie]="movie"
-      [showings]="showings"
-      [cinemas]="cinemas"
-    ></app-movie>
+    <a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a>
   </li>
 </ul>
