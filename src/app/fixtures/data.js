@@ -57,96 +57,54 @@ export const showings = [
     id: 1,
     cinemaId: 1,
     movieId: 1,
-    time: "10:00"
+    times: ["10:00", "13:00", "18:00"]
   },
   {
     id: 2,
     cinemaId: 1,
-    movieId: 1,
-    time: "13:00"
+    movieId: 3,
+    times: ["12:00", "15:00"]
   },
   {
     id: 3,
     cinemaId: 1,
-    movieId: 1,
-    time: "18:00"
+    movieId: 4,
+    times: ["14:00"]
   },
   {
     id: 4,
-    cinemaId: 1,
-    movieId: 3,
-    time: "12:00"
+    cinemaId: 2,
+    movieId: 2,
+    times: ["11:00", "15:00"]
   },
   {
     id: 5,
-    cinemaId: 1,
-    movieId: 3,
-    time: "15:00"
+    cinemaId: 2,
+    movieId: 5,
+    times: ["13:00"]
   },
   {
     id: 6,
-    cinemaId: 1,
-    movieId: 4,
-    time: "14:00"
+    cinemaId: 2,
+    movieId: 6,
+    times: ["17:00"]
   },
   {
     id: 7,
-    cinemaId: 2,
-    movieId: 2,
-    time: "11:00"
+    cinemaId: 3,
+    movieId: 3,
+    times: ["10:00", "15:00"]
   },
   {
     id: 8,
-    cinemaId: 2,
-    movieId: 2,
-    time: "15:00"
+    cinemaId: 3,
+    movieId: 5,
+    times: ["12:00", "20:00"]
   },
   {
     id: 9,
-    cinemaId: 2,
-    movieId: 5,
-    time: "13:00"
-  },
-  {
-    id: 10,
-    cinemaId: 2,
-    movieId: 6,
-    time: "17:00"
-  },
-  {
-    id: 11,
-    cinemaId: 3,
-    movieId: 3,
-    time: "10:00"
-  },
-  {
-    id: 12,
-    cinemaId: 3,
-    movieId: 3,
-    time: "15:00"
-  },
-  {
-    id: 13,
-    cinemaId: 3,
-    movieId: 5,
-    time: "20:00"
-  },
-  {
-    id: 14,
-    cinemaId: 3,
-    movieId: 5,
-    time: "12:00"
-  },
-  {
-    id: 15,
     cinemaId: 3,
     movieId: 6,
-    time: "14:00"
-  },
-  {
-    id: 16,
-    cinemaId: 3,
-    movieId: 6,
-    time: "15:00"
+    times: ["14:00", "17:00"]
   }
 ];

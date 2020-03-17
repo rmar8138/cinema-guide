@@ -5,7 +5,11 @@
   <ul *ngFor="let showing of showings">
     <li>
       <a [routerLink]="['/cinema', showing.cinemaId]">{{ showing.cinemaId }}</a>
-      {{ showing.time }}
+      <ul>
+        <li *ngFor="let time of showing.times">
+          {{ time }}
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

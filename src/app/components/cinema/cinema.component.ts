@@ -22,6 +22,8 @@ export class CinemaComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = parseInt(params.get('id'));
       this.cinema = this.movieService.getCinema(id);
+      console.log(this.movieService.getMovieShowings(id));
+
     });
   }
 }

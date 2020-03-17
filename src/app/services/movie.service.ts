@@ -34,4 +34,18 @@ export class MovieService {
   getShowings() {
     return this.showings;
   }
+
+  getMovieShowings(cinemaId: number) {
+    const movieShowings = [];
+    const cinemaShowings = this.getShowings().filter(showing => showing.cinemaId === cinemaId);
+    const movies = this.getMovies();
+    cinemaShowings.forEach(cinemaShowing => {
+      movieShowings.push({
+        movie: movies.find(movie => movie.id === cinemaShowing.movieId),
+        times: cinemaShowing.times
+      });
+    });
+
+    return movieShowings;
+  }
 }
