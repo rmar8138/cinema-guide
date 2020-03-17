@@ -1,0 +1,13 @@
+@import "./../../../variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space-sm $space-md;
+  background-color: $color-black;
+
+  a {
+    color: $color-light-grey;
+  }
+}

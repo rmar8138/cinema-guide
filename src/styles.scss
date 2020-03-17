@@ -1,30 +1,4 @@
-// IMPORTS
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
-
-// COLOR VARIABLES //
-
-$color-black: #000;
-$color-dark-grey: #171717;
-$color-light-grey: #696969;
-$color-white: #fff;
-
-// FONT SIZE VARIABLES //
-$base-size: 1.6rem;
-$scale-ratio: 1.2;
-$text-xs: calc($base-size / ($scale-ratio * $scale-ratio));
-$text-sm: calc($base-size / $scale-ratio);
-$text-md: calc($base-size * $scale-ratio);
-$text-lg: calc($base-size * $scale-ratio * $scale-ratio);
-$text-xl: calc($base-size * $scale-ratio * $scale-ratio * $scale-ratio);
-
-// SPACING VARIABLES //
-
-$space-unit: 1.6rem;
-$space-xs: calc(0.5 * $space-unit);
-$space-sm: calc(0.75 * $space-unit);
-$space-md: calc(1.25 * $space-unit);
-$space-lg: calc(2 * $space-unit);
-$space-xl: calc(3.25 * $space-unit);
+@import "./variables.scss";
 
 * {
   margin: 0;
@@ -33,6 +7,7 @@ $space-xl: calc(3.25 * $space-unit);
 }
 
 html {
+  font-size: 62.5%;
   box-sizing: border-box;
   background-color: $color-dark-grey;
 }
