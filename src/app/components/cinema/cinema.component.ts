@@ -13,6 +13,8 @@ import { MovieShowing } from './../../models/MovieShowing';
 export class CinemaComponent implements OnInit {
   cinema: Cinema;
   movieShowings: MovieShowing[];
+  cinemaName: string;
+  cinemaLocation: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,5 +28,15 @@ export class CinemaComponent implements OnInit {
       this.cinema = this.movieService.getCinema(id);
       this.movieShowings = this.movieService.getMovieShowings(id);
     });
+  }
+
+  onSubmit() {
+    this.movieService.updateCinema(this.cinema.id, {
+      name: this.cinemaName || this.cinema.name,
+      location: this.cinemaLocation || this.cinema.location
+    });
+
+    this.cinemaName = '';
+    this.cinemaLocation = '';
   }
 }

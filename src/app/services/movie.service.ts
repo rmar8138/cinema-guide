@@ -39,10 +39,9 @@ export class MovieService {
     // see what movies are showing at a cinema
     const movieShowings = [];
     const cinemaShowings = this.getShowings().filter(showing => showing.cinemaId === cinemaId);
-    const movies = this.getMovies();
     cinemaShowings.forEach(cinemaShowing => {
       movieShowings.push({
-        movie: movies.find(movie => movie.id === cinemaShowing.movieId),
+        movie: this.movies.find(movie => movie.id === cinemaShowing.movieId),
         times: cinemaShowing.times
       });
     });
@@ -54,10 +53,9 @@ export class MovieService {
     // see which cinemas are showing a certain movie
     const cinemaShowings = [];
     const movieShowings = this.getShowings().filter(showing => showing.movieId === movieId);
-    const cinemas = this.getCinemas();
     movieShowings.forEach(movieShowing => {
       cinemaShowings.push({
-        cinema: cinemas.find(cinema => cinema.id === movieShowing.cinemaId),
+        cinema: this.cinemas.find(cinema => cinema.id === movieShowing.cinemaId),
         times: movieShowing.times
       });
     });
@@ -65,11 +63,21 @@ export class MovieService {
     return cinemaShowings;
   }
 
-  updateMovie(id, { title, genre }) {
+  updateMovie(id: number, { title, genre }) {
     this.movies.forEach(movie => {
       if (movie.id === id) {
         movie.title = title;
         movie.genre = genre;
+        return;
+      }
+    });
+  }
+
+  updateCinema(id: number, { name, location }) {
+    this.cinemas.forEach(cinema => {
+      if (cinema.id === id) {
+        cinema.name = name;
+        cinema.location = location;
         return;
       }
     });
