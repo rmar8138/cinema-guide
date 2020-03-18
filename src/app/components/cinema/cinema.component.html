@@ -1,30 +1,48 @@
-<div>
-  <h3>{{ cinema.name }}</h3>
-  <p>{{ cinema.location }}</p>
-  <p>Opening Hours: {{ cinema.openingHours }}</p>
-  <ul>
-    <li *ngFor="let movieShowing of movieShowings">
-      <a [routerLink]="['/movie', movieShowing.movie.id]">{{
-        movieShowing.movie.title
-      }}</a>
-      <span>{{ movieShowing.movie.genre }}</span>
+<div class="cinema-container">
+  <div class="cinema">
+    <div class="cinema__image">
+      <img
+        src="./../../../assets/images/cinemas/{{ cinema.id }}.jpg"
+        alt="{{ cinema.name }}"
+      />
+    </div>
+    <div class="cinema__details">
+      <a class="back-link" [routerLink]="['/cinemas']">&larr; Back</a>
+      <div class="cinema__name">
+        <h2>{{ cinema.name }}</h2>
+        <p class="location">{{ cinema.location }}</p>
+        <p>Opening Hours: {{ cinema.openingHours }}</p>
+      </div>
+    </div>
+
+    <div class="cinema__showings">
+      <h3>Now Showing</h3>
       <ul>
-        <li *ngFor="let time of movieShowing.times">
-          <span>{{ time }}</span>
+        <li *ngFor="let movieShowing of movieShowings">
+          <a [routerLink]="['/movie', movieShowing.movie.id]">{{
+            movieShowing.movie.title
+          }}</a>
+          <ul>
+            <li *ngFor="let time of movieShowing.times">
+              <span>{{ time }}</span>
+            </li>
+          </ul>
         </li>
       </ul>
-    </li>
-  </ul>
-  <h3>Update Cinema Details</h3>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label>Name</label>
-      <input type="text" name="name" [(ngModel)]="cinemaName" />
     </div>
-    <div>
-      <label>Location</label>
-      <input type="text" name="location" [(ngModel)]="cinemaLocation" />
+    <div class="cinema__form">
+      <h3>Update Cinema Details</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-field">
+          <label>Name</label>
+          <input type="text" name="name" [(ngModel)]="cinemaName" />
+        </div>
+        <div class="form-field">
+          <label>Location</label>
+          <input type="text" name="location" [(ngModel)]="cinemaLocation" />
+        </div>
+        <button>Update</button>
+      </form>
     </div>
-    <button>Update</button>
-  </form>
+  </div>
 </div>

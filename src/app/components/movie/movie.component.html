@@ -15,8 +15,8 @@
       </div>
       <div class="movie__showings">
         <h3>Showings</h3>
-        <ul *ngFor="let cinemaShowing of cinemaShowings">
-          <li>
+        <ul>
+          <li *ngFor="let cinemaShowing of cinemaShowings">
             <a [routerLink]="['/cinema', cinemaShowing.cinema.id]">{{
               cinemaShowing.cinema.name
             }}</a>
