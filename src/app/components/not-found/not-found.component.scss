@@ -1,0 +1,27 @@
+@import "./../../../variables.scss";
+
+.page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-container {
+  h2 {
+    font-size: 5.2rem;
+  }
+
+  p {
+    margin-bottom: $space-md;
+  }
+
+  a {
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      color: $color-light-grey;
+    }
+  }
+}

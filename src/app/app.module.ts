@@ -10,6 +10,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MovieComponent } from './components/movie/movie.component';
 import { CinemaComponent } from './components/cinema/cinema.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderComponent } from './components/header/header.component';
     NavigationComponent,
     MovieComponent,
     CinemaComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

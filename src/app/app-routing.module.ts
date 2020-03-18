@@ -5,7 +5,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { CinemasComponent } from './components/cinemas/cinemas.component';
-import { CinemaComponent } from './components/cinema/cinema.component'
+import { CinemaComponent } from './components/cinema/cinema.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
 
 const routes: Routes = [
   { path: '', component: NavigationComponent },
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'movie/:id', component: MovieComponent },
   { path: 'cinemas', component: CinemasComponent },
   { path: 'cinema/:id', component: CinemaComponent },
+  { path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];
 
 @NgModule({
