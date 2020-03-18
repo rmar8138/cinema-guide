@@ -7,24 +7,50 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: $breakpoint-md) {
+    height: unset;
+  }
 }
 
 .movie {
   height: 40vw;
   width: 90%;
-  // padding: $space-md;
   background-color: $color-black;
   display: flex;
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
 
   &__image {
     display: flex;
     justify-content: center;
     align-items: stretch;
-
     width: 30%;
+
+    @media only screen and (max-width: $breakpoint-lg) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
 
     img {
       width: 100%;
+
+      @media only screen and (max-width: $breakpoint-lg) {
+        width: 30%;
+      }
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        width: 100%;
+      }
     }
   }
 
@@ -35,6 +61,10 @@
     flex-direction: column;
     flex: 1;
     overflow: scroll;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      overflow: unset;
+    }
 
     a {
       &:hover {

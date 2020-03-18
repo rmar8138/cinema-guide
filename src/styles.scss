@@ -11,8 +11,12 @@ html {
   box-sizing: border-box;
   background-color: $color-dark-grey;
 
+  @media only screen and (max-width: $breakpoint-md) {
+    font-size: 52.5%;
+  }
+
   @media only screen and (max-width: $breakpoint-sm) {
-    font-size: 45%;
+    font-size: 42.5%;
   }
 }
 
