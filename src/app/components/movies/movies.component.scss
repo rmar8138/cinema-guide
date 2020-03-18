@@ -20,8 +20,15 @@
     width: 100%;
     margin: 0 auto;
     display: grid;
-    -ms-grid-columns: 33.333% 33.333% 33.333%;
     grid-template-columns: 33.333% 33.333% 33.333%;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      grid-template-columns: 50% 50%;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      grid-template-columns: 100%;
+    }
   }
 
   li {
@@ -44,6 +51,14 @@
     justify-content: center;
     align-items: flex-end;
     transition: all 0.2s ease-out;
+
+    @media only screen and (max-width: $breakpoint-md) {
+      height: 24vw;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      height: 32vw;
+    }
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.6);

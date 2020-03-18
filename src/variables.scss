@@ -30,3 +30,8 @@ $space-sm: calc(0.75 * #{$space-unit});
 $space-md: calc(1.25 * #{$space-unit});
 $space-lg: calc(2 * #{$space-unit});
 $space-xl: calc(3.25 * #{$space-unit});
+
+// BREAPOINT VARIABLES //
+
+$breakpoint-sm: 550px;
+$breakpoint-md: 800px;
