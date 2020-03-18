@@ -11,9 +11,37 @@
   }
 
   li a {
-    display: block;
-    background-color: $color-light-grey;
+    display: flex;
     height: 40rem;
     width: 30rem;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+
+      & > span {
+        display: block;
+      }
+    }
+
+    span {
+      font-size: $text-xl;
+      display: none;
+      transition: all 0.2s ease-out;
+    }
+  }
+
+  .movies {
+    background-image: url("./../../../assets/images/movies/6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .cinemas {
+    background-image: url("./../../../assets/images/cinemas/1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
