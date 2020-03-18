@@ -1,0 +1,61 @@
+@import "./../../../variables.scss";
+
+.cinemas {
+  &__header {
+    margin: $space-sm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    a {
+      transition: all 0.2 ease-out;
+
+      &:hover {
+        color: $color-light-grey;
+      }
+    }
+  }
+
+  ul {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    -ms-grid-columns: 33.333% 33.333% 33.333%;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+  }
+
+  li {
+    max-width: 100%;
+    margin: $space-sm;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  li a {
+    font-size: $text-lg;
+    font-weight: 400;
+    height: 17vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+
+      & > span {
+        display: block;
+      }
+    }
+
+    span {
+      display: none;
+      transition: all 0.2s ease-out;
+    }
+  }
+}

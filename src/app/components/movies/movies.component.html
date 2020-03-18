@@ -7,7 +7,7 @@
     <li
       *ngFor="let movie of movies"
       [style.backgroundImage]="
-        'url(' + './../../assets/images/' + movie.id + '.jpg' + ')'
+        'url(' + './../../assets/images/movies/' + movie.id + '.jpg' + ')'
       "
     >
       <a [routerLink]="['/movie', movie.id]">
